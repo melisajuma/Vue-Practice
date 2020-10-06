@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <input type ="text" v-on:input="changeTitle">
     <h1> {{ newTitle() }} </h1>
+    <p> {{ newTitle() }} - <a v-bind:href="link">Google</a></p>
   </div>
 </template>
 
@@ -12,13 +12,14 @@ export default {
   components: {},
   data(){
     return {
-      title:"First title"
+      title:"First title",
+      link:'http://google.com'
 
     };
   },
   methods:{
     newTitle(){
-      return "new Title!";
+      return this.title;
     }
   }
 }
